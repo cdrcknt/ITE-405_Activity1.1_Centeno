@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Data Story Infographic</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-icon">🎨</div>
+            <h1>📊 ITE 405 - Personal Data Story</h1>
+            <p>Create your personal infographic with interactive data visualization</p>
+            <div class="header-decoration"></div>
+        </div>
+        
+        <div class="main-content">
+            <div class="form-section">
+                <div class="form-header">
+                    <i class="fas fa-edit"></i>
+                    <h3>Enter Your Information</h3>
+                </div>
+                
+                <div class="form-group">
+                    <label for="studentName"><i class="fas fa-user"></i> Full Name:</label>
+                    <input type="text" id="studentName" placeholder="e.g., Juan Dela Cruz">
+                </div>
+                
+                <div class="form-group">
+                    <label for="program"><i class="fas fa-graduation-cap"></i> Program:</label>
+                    <select id="program">
+                        <option value="">Select Program</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Computer Engineering">Computer Engineering</option>
+                        <option value="Data Science">Data Science</option>
+                        <option value="Software Engineering">Software Engineering</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address"><i class="fas fa-map-marker-alt"></i> Address:</label>
+                    <input type="text" id="address" placeholder="e.g., Cubao, Quezon City">
+                </div>
+                
+                <div class="form-group">
+                    <label for="hobby"><i class="fas fa-heart"></i> Favorite Hobby:</label>
+                    <input type="text" id="hobby" placeholder="e.g., Hiking">
+                </div>
+                
+                <div class="form-group">
+                    <label for="siblings"><i class="fas fa-users"></i> Number of Siblings:</label>
+                    <input type="number" id="siblings" min="0" max="20" placeholder="e.g., 2">
+                </div>
+                
+                <div class="form-group">
+                    <label for="skill"><i class="fas fa-star"></i> Unique Skill:</label>
+                    <input type="text" id="skill" placeholder="e.g., Plays the guitar">
+                </div>
+                
+                <div class="form-group">
+                    <label for="languages"><i class="fas fa-code"></i> Programming Languages (comma-separated):</label>
+                    <textarea id="languages" rows="3" placeholder="e.g., Python, Java, JavaScript, C++, HTML, CSS"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="themeColor"><i class="fas fa-palette"></i> Theme Color:</label>
+                    <input type="color" id="themeColor" class="color-input" value="#2196F3">
+                </div>
+                
+                <button onclick="generateInfographic()" class="primary-btn">
+                    <i class="fas fa-magic"></i> Generate Infographic
+                </button>
+                <button onclick="downloadInfographic()" class="download-btn">
+                    <i class="fas fa-download"></i> Download as Image
+                </button>
+            </div>
+            
+            <div class="infographic" id="infographic">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <div class="avatar-icon">👨‍💻</div>
+                        <div class="avatar-ring"></div>
+                    </div>
+                    <div class="profile-name" id="displayName">Your Name Here</div>
+                    <div class="profile-program-container">
+                        <div class="program-badge" id="displayProgram">Your Program</div>
+                    </div>
+                </div>
+                
+                <div class="data-grid">
+                    <div class="data-card location-card">
+                        <div class="card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="data-label">Location</div>
+                            <div class="data-value" id="displayAddress">Your Address</div>
+                        </div>
+                    </div>
+                    
+                    <div class="data-card hobby-card">
+                        <div class="card-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="data-label">Favorite Hobby</div>
+                            <div class="data-value" id="displayHobby">Your Hobby</div>
+                        </div>
+                    </div>
+                    
+                    <div class="data-card siblings-card">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="data-label">Siblings</div>
+                            <div class="data-value" id="displaySiblings">0</div>
+                        </div>
+                    </div>
+                    
+                    <div class="data-card skill-card">
+                        <div class="card-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="data-label">Unique Skill</div>
+                            <div class="data-value" id="displaySkill">Your Skill</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-section">
+                    <div class="skills-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Programming Languages & Technologies</h3>
+                    </div>
+                    <div class="skills-chart" id="skillsChart">
+                        <div class="skill-item">
+                            <i class="fas fa-plus"></i>
+                            <span>Add your languages above</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="src/script.js"></script>
+</body>
+</html>
